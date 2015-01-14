@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>问题:</strong>
+  <%= @codebug.title %>
+</p>
+<p>
+  <strong>详细：</strong>
+  <%= @codebug.description %>
+</p>
+<p>
+  <strong>解决办法:</strong>
+  <%= @codebug.content %>
+</p>
+
+<%= link_to '编辑', edit_codebug_path(@codebug),class:'btn btn-primary' %>
+<%= link_to '返回列表', codebugs_path ,class:'btn btn-info'%>

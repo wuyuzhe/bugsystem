@@ -1,0 +1,29 @@
+<%= form_for(@codebug) do |f| %>
+  <% if @codebug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@codebug.errors.count, "error") %> prohibited this codebug from being saved:</h2>
+
+      <ul>
+      <% @codebug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title,"标题"%><br>
+    <%= f.text_field :title %>
+  </div>
+    <div class="field">
+      <%= f.label :description,"详细" %><br>
+        <%= f.text_area :description %>
+    </div>
+  <div class="field">
+    <%= f.label :content,"解决方法" %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交",class:"btn btn-info"%>
+  </div>
+<% end %>

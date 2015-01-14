@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=yield(:title)%></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+  #logo {font-size:20px;}
+</style>
+<body>
+    <% if signed_in? %>
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to  '编程问题总结','#',id:'logo',style:'color:#000;'  %>
+          <nav>
+            <ul class="nav pull-right">
+              <li <% if request.url['codebugs'] %> class="active" <% end %>><%=link_to '问题',codebugs_path %></li>
+              <li><%=link_to("退出",signout_path)%></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    </header>
+    <% end %>
+<div class="content">
+<%= yield %>
+</div>
+</body>
+</html>

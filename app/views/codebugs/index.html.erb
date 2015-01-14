@@ -1,0 +1,26 @@
+<div class="content_header">
+    <%= render "searchform"%>
+    <%= link_to '添加', new_codebug_path,class:"btn btn-primary"%>
+</div>
+<table class="table table-hover" style="width:70%;margin:0 auto;">
+  <caption>代码bug列表</caption>
+  <thead>
+    <tr>
+      <th width="75%">问题</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @codebugs.each do |codebug| %>
+      <tr>
+        <td><%= codebug.title %></td>
+        <td><%= link_to '查看', codebug ,class:'btn btn-info'%></td>
+        <td><%= link_to '编辑', edit_codebug_path(codebug) ,class:"btn btn-primary"%></td>
+        <td><%= link_to '删除', codebug, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

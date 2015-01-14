@@ -1,0 +1,2 @@
+module CodebugsHelper
+end

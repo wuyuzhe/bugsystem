@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2710956485">
+    <data-source source="LOCAL" name="Rails bug: development" uuid="5275b405-3dc4-4aed-ab04-0d055420dca8">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://172.17.0.254/bug</jdbc-url>
+      <user-name>bug</user-name>
+      <user-password>dfc8dfdfdfcd</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails bug: test" uuid="15b8d84d-a231-4c5b-bdc4-b3a86fc7c6fc">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://172.17.0.254/bug</jdbc-url>
+      <user-name>bug</user-name>
+      <user-password>dfc8dfdfdfcd</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails bug: production" uuid="7dbd3fad-9a2e-40c3-8366-47b743cc5a5f">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://172.17.0.254/bug</jdbc-url>
+      <user-name>bug</user-name>
+      <user-password>dfc8dfdfdfcd</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
