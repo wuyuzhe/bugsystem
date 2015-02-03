@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :reg
   get "signin", to: "session#new"
   get "signout", to: "session#destroy"
-  root "codebugs#index"
+
+  get "/show/:id" , to: "index#show"
+  root "index#index"
 end

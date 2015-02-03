@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203050241) do
+ActiveRecord::Schema.define(version: 20150203070421) do
 
   create_table "bugtypes", force: true do |t|
     t.string   "typename"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150203050241) do
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "remember_token"
-    t.string   "wechat"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"

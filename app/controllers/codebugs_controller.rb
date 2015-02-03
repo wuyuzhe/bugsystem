@@ -3,9 +3,9 @@ class CodebugsController < ApplicationController
   before_action :set_codebug, only: [:show, :edit, :update, :destroy]
   def index
     if params.key? :title
-      @codebugs = Codebug.where(" title like '%#{params[:title]}%'").paginate(page:params[:page],per_page:10)
+      @codebugs = Codebug.where(" title like '%#{params[:title]}%'").where("user_id=?",current_user.id).order(created_at: :desc).paginate(page:params[:page],per_page:10)
     else
-      @codebugs = Codebug.paginate(page:params[:page],per_page:10)
+      @codebugs = Codebug.where("user_id=?",current_user.id).order(created_at: :desc).paginate(page:params[:page],per_page:10)
     end
     i = 0
     @typename = Array.new
@@ -32,6 +32,7 @@ class CodebugsController < ApplicationController
   end
   def create
     @codebug = Codebug.new(codebug_params)
+    @codebug.user = current_user
     respond_to do |format|
       if @codebug.save
         format.html { redirect_to @codebug, notice: 'Codebug was successfully created.' }

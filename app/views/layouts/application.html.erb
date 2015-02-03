@@ -17,7 +17,8 @@
           <%= link_to  '编程问题总结','#',id:'logo',style:'color:#000;'  %>
           <nav>
             <ul class="nav pull-right">
-              <li <% if request.url['codebugs'] %> class="active" <% end %>><%=link_to '问题',codebugs_path %></li>
+              <li <% if request.url['index'] %> class="active" <% end %> ><%=link_to '首页','/'%></li>
+              <li <% if request.url['codebugs'] %> class="active" <% end %>><%=link_to '我的问题',codebugs_path %></li>
               <li <% if request.url['bugtypes'] %> class="active" <% end %>><%=link_to '类型管理',bugtypes_path %></li>
               <li><%=link_to("退出",signout_path)%></li>
               </ul>

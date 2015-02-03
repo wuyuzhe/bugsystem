@@ -2,7 +2,7 @@ module SessionHelper
   def sign_in(user)
     cookies[:remember_token] = user.remember_token
     self.current_user = user
-    redirect_to codebugs_path
+    redirect_to "/"
   end
   def current_user=(user)
     @current_user = user

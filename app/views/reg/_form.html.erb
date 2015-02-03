@@ -15,10 +15,6 @@
       <%= f.text_field :email %>
   </div>
   <div class="field">
-      <%= f.label :wechat,'微信号' %><br>
-      <%= f.text_field :wechat %>
-  </div>
-  <div class="field">
     <%= f.label :password,'密码' %><br>
     <%= f.password_field :password %>
   </div>
@@ -28,6 +24,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "注册" %>
+    <%= f.submit "注册",class:"btn btn-primary" %>
   </div>
 <% end %>

@@ -1,0 +1,30 @@
+<div class="content_header">
+  <%= render "searchform"%>
+  <%= link_to '添加', new_codebug_path,class:"btn btn-primary"%>
+</div>
+<table class="table table-hover" style="width:70%;margin:0 auto;">
+  <caption class="tb-header">代码bug列表</caption>
+  <thead>
+  <tr>
+    <th width="55%">问题</th>
+    <th width="10%">类型</th>
+    <th style="text-align:right;"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%
+     i = 0
+     @codebugs.each do |codebug|
+  %>
+      <tr>
+        <td><%= codebug.title %></td>
+        <td><%=@typename[i]%></td>
+        <td><%= link_to '查看', "/show/#{codebug.id}" ,class:'btn btn-info'%></td>
+      </tr>
+      <% i += 1%>
+  <% end %>
+  </tbody>
+</table>
+
+
