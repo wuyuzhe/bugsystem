@@ -7,9 +7,22 @@ class CodebugsController < ApplicationController
     else
       @codebugs = Codebug.paginate(page:params[:page],per_page:10)
     end
+    i = 0
+    @typename = Array.new
+    @codebugs.each do |f|
+      if !f.bugtype_id.nil?
+        @bugtype = Bugtype.find(f.bugtype_id)
+        @typename[i] = @bugtype.typename
+      else
+        @typename[i] = ""
+      end
+      i = i + 1
+    end
   end
+
   def show
   end
+
   def new
     @codebug = Codebug.new
     @bugtypes = Bugtype.all
