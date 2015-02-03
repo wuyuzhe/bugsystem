@@ -1,0 +1,20 @@
+<%= form_for(@bugtype) do |f| %>
+  <% if @bugtype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bugtype.errors.count, "个错误") %> 阻止了bugtype保存:</h2>
+      <ul>
+      <% @bugtype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label '类型名'%><br>
+    <%= f.text_field :typename %>
+  </div>
+  <div class="actions">
+    <%= f.submit '保存',class:'btn btn-info'%>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bugtypes
+
   resources :users
   resources :session
   resources :codebugs

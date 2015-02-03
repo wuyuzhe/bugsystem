@@ -15,7 +15,11 @@
     <%= f.label :title,"标题"%><br>
     <%= f.text_field :title %>
   </div>
-    <div class="field">
+  <div class="field">
+    <%=f.label :bugtype_id,'类型'%><br>
+    <%=f.select("bugtype_id",Bugtype.all.collect {|p| [p.typename,p.id]},{ :include_blank=>true})%>
+  </div>
+  <div class="field">
       <%= f.label :description,"详细" %><br>
         <%= f.text_area :description %>
     </div>

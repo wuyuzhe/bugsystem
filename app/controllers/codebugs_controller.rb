@@ -12,8 +12,10 @@ class CodebugsController < ApplicationController
   end
   def new
     @codebug = Codebug.new
+    @bugtypes = Bugtype.all
   end
   def edit
+    @bugtypes = Bugtype.all
   end
   def create
     @codebug = Codebug.new(codebug_params)
@@ -50,6 +52,6 @@ class CodebugsController < ApplicationController
       @codebug = Codebug.find(params[:id])
     end
     def codebug_params
-      params.require(:codebug).permit(:title,:description, :content)
+      params.require(:codebug).permit(:title,:bugtype_id,:description, :content)
     end
 end
